@@ -7,7 +7,7 @@ var {Todo} = require('./models/todo');
 var {User} = require('./models/user');
 
 var app = express();
-const PORT = process.env.MONGODB_URI || 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
@@ -51,8 +51,8 @@ app.get('/todos/:id', (req, res) => {
 
 });
 
-app.listen(PORT, () => {
-    console.log(`Started on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Started on port ${port}`);
 });
 
 module.exports = {app};
