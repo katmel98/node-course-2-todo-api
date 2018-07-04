@@ -13,13 +13,13 @@ app.use(bodyParser.json());
 app.post('/todos', (req, res) => {
     var todo = new Todo({
         text: req.body.text
-    })
+    });
     todo.save().then((doc) => {
         res.status(200).send(doc);
     },(e) => {
         res.status(400).send(e);
-    })
-})
+    });
+});
 
 // Read = GET
 app.get('/todos', (req, res) => {
@@ -27,8 +27,8 @@ app.get('/todos', (req, res) => {
         res.send({todos});
     }, (e) => {
         res.status(400).send(e);        
-    })
-})
+    });
+});
 
 
 app.listen(3000, () => {
